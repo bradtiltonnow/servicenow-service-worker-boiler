@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>Service Portal Web Worker / Service Worker example</description>
+        <global>false</global>
+        <name>x_snc_service_work.spsw</name>
+        <script><![CDATA[// If we're not in the context of a Web Worker, then don't do anything
+if( 'function' === typeof importScripts) {
+	importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js');
+
+	if (workbox) {
+	  console.log('Yay! Workbox is loaded ');
+
+	} else {
+	  console.log('Boo! Workbox didn\'t load');
+	}
+
+	workbox.routing.registerRoute(/\.(?:js|css)$/, workbox.strategies.staleWhileRevalidate());
+}]]></script>
+        <script_name>spsw</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>james.tandy@snc</sys_created_by>
+        <sys_created_on>2018-08-17 03:29:37</sys_created_on>
+        <sys_id>cd33c394db00a70074f7f2353a9619c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_service_work.spsw</sys_name>
+        <sys_package display_value="Service Worker" source="x_snc_service_work">6d23cb54db00a70074f7f2353a96195d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Service Worker">6d23cb54db00a70074f7f2353a96195d</sys_scope>
+        <sys_update_name>sys_ui_script_cd33c394db00a70074f7f2353a9619c2</sys_update_name>
+        <sys_updated_by>james.tandy@snc</sys_updated_by>
+        <sys_updated_on>2018-08-17 03:29:37</sys_updated_on>
+        <ui_type>1</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>
