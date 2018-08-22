@@ -14,22 +14,27 @@ if( 'function' === typeof importScripts) {
 	} else {
 	  console.log('Boo! Workbox didn\'t load');
 	}
+	
+	//Intercept all api requests to the incident table api as an example
+	var matchCb = ({url, event}) => {
+		return (url.pathname == '/api/now/table/incident');
+	};
 
-	workbox.routing.registerRoute(/\.(?:js|css)$/, workbox.strategies.staleWhileRevalidate());
+	workbox.routing.registerRoute(matchCb, workbox.strategies.staleWhileRevalidate());
 }]]></script>
         <script_name>spsw</script_name>
         <sys_class_name>sys_ui_script</sys_class_name>
         <sys_created_by>james.tandy@snc</sys_created_by>
         <sys_created_on>2018-08-17 03:29:37</sys_created_on>
         <sys_id>cd33c394db00a70074f7f2353a9619c2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>x_snc_service_work.spsw</sys_name>
         <sys_package display_value="Service Worker" source="x_snc_service_work">6d23cb54db00a70074f7f2353a96195d</sys_package>
         <sys_policy/>
         <sys_scope display_value="Service Worker">6d23cb54db00a70074f7f2353a96195d</sys_scope>
         <sys_update_name>sys_ui_script_cd33c394db00a70074f7f2353a9619c2</sys_update_name>
         <sys_updated_by>james.tandy@snc</sys_updated_by>
-        <sys_updated_on>2018-08-17 03:29:37</sys_updated_on>
+        <sys_updated_on>2018-08-22 00:13:04</sys_updated_on>
         <ui_type>1</ui_type>
         <use_scoped_format>false</use_scoped_format>
     </sys_ui_script>
